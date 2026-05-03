@@ -1,3 +1,5 @@
+import LeftSideBar from "@/components/homepage/news/LeftSideBar";
+import RightSideBar from "@/components/homepage/news/RightSideBar";
 import Image from "next/image";
 
 async function getCategories () {
@@ -13,18 +15,10 @@ export default async function Home() {
  
   return <div className="grid grid-cols-12 gap-4 my-15 container mx-auto">
     <div className="font-bold col-span-3">
-      <h2 className="text-lg text-white">All Category</h2>
-    <ul className="flex flex-col gap-3 mt-6">
-      {
-        categories.news_category.map(category => {
-        return <li key={category.category_id} className="bg-slate-100 font-bold p-2 text-lg rounded-md text-center text-black">{category.category_name}</li>
-    })
-  }
-    </ul>
-
+      <LeftSideBar categories={categories} activeId={null}></LeftSideBar>
     </div>
     <div className="font-bold text-3xl bg-red-100 text-black col-span-6">Dragon News Home</div>
-    <div className="font-bold text-3xl bg-yellow-100 text-black col-span-3">Login With</div>
+    <div className=" text-white col-span-3"><RightSideBar></RightSideBar></div>
   </div>
     
 
