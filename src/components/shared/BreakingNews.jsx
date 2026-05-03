@@ -22,7 +22,9 @@ const BreakingNews = () => {
       <button className="btn bg-red-500 text-white">Latest News</button>
       <Marquee pauseOnHover={true} speed={100}>
         {news.map((n) => (
-          <span key={n.id}>{n.title}</span>
+          <span key={n.id} className="text-gray-600">
+            {n.title}
+          </span>
         ))}
       </Marquee>
     </div>
